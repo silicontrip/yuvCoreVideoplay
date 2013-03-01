@@ -16,14 +16,14 @@ static void print_usage()
 			 "usage: yuvCoreVideoplay [-v] [-c] [-p] [-r|-R <d:n>] [-a <d:n>] [-n]\n"
 			 "yuvCoreVideoplay  plays video from a yuvstream\n"
 			 "\n"
-			 "\t -c passthrough mode. will write the stream to stdout.\n"
-			 "\t -p paused. display the first frame and pause.\n"
-			"\t -r ignore frame rate. Play each frame as it becomes available\n"
-			"\t -R override frame rate to this\n"
-			"\t -a override aspect ratio to this\n"
-			"\t -n do not skip frames.  Needed for slow video filters.\n"
-			 "\t -v Verbosity degree : 0=quiet, 1=normal, 2=verbose/debug\n"
-			 "\t -h print this help\n"
+			 "-c\tPassthrough mode. will write the stream to stdout.\n"
+			 "-p\tPaused. display the first frame and pause.\n"
+             "-r\tignore frame rate. Play each frame as it becomes available\n"
+             "-R\toverride frame rate to this\n"
+             "-a\toverride aspect ratio to this\n"
+             "-n\tdo not skip frames.  Needed for slow video filters.\n"
+			 "-v\tVerbosity degree : 0=quiet, 1=normal, 2=verbose/debug\n"
+			 "-h\tprint this help\n"
 			 );
 }
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 				break;				
 			case 'h':
 			case '?':
-				print_usage (argv);
+				print_usage ();
 				return 0 ;
 				break;
 			case 'c':
