@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4422B76A0E007F9100266B9A /* yuvGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422B7690E007F9100266B9A /* yuvGlobals.m */; };
-		44258B7B162D0E7100594392 /* libmjpegutils.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44258B7A162D0E7100594392 /* libmjpegutils.dylib */; };
 		44D3FE7E147077D700546721 /* y4m.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D3FE7D147077D700546721 /* y4m.m */; };
 		4DB02E5F0D8B863C005D492C /* yuvVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB02E5E0D8B863C005D492C /* yuvVideoView.m */; };
 		4DB02ECF0D8B9DFE005D492C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB02ECE0D8B9DFE005D492C /* OpenGL.framework */; };
@@ -28,15 +27,11 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* yuvCoreVideoplay_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yuvCoreVideoplay_Prefix.pch; sourceTree = "<group>"; };
-		4422B7680E007F9100266B9A /* yuvGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yuvGlobals.h; path = /Users/d332027/Developer/yuvCoreVideoplay/yuvGlobals.h; sourceTree = "<absolute>"; };
-		4422B7690E007F9100266B9A /* yuvGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = yuvGlobals.m; path = /Users/d332027/Developer/yuvCoreVideoplay/yuvGlobals.m; sourceTree = "<absolute>"; };
-		44258B7A162D0E7100594392 /* libmjpegutils.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmjpegutils.dylib; path = /usr/local/lib/libmjpegutils.dylib; sourceTree = "<absolute>"; };
-		44BE34EF0E025B9300FE0896 /* yuv4mpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yuv4mpeg.h; path = /usr/local/include/mjpegtools/yuv4mpeg.h; sourceTree = "<absolute>"; };
-		44BE34F00E025BA600FE0896 /* mjpeg_logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mjpeg_logging.h; path = /usr/local/include/mjpegtools/mjpeg_logging.h; sourceTree = "<absolute>"; };
-		44BE34F10E025BA600FE0896 /* mjpeg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mjpeg_types.h; path = /usr/local/include/mjpegtools/mjpeg_types.h; sourceTree = "<absolute>"; };
-		44BE34F30E025BB500FE0896 /* mpegconsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mpegconsts.h; path = /usr/local/include/mjpegtools/mpegconsts.h; sourceTree = "<absolute>"; };
+		4422B7680E007F9100266B9A /* yuvGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yuvGlobals.h; sourceTree = SOURCE_ROOT; };
+		4422B7690E007F9100266B9A /* yuvGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yuvGlobals.m; sourceTree = SOURCE_ROOT; };
 		44D3FE7C147077D700546721 /* y4m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = y4m.h; sourceTree = "<group>"; };
 		44D3FE7D147077D700546721 /* y4m.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = y4m.m; sourceTree = "<group>"; };
+		4D91E8F416E01BAB0073B2C2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4DB02E5D0D8B863C005D492C /* yuvVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yuvVideoView.h; sourceTree = SOURCE_ROOT; };
 		4DB02E5E0D8B863C005D492C /* yuvVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = yuvVideoView.m; sourceTree = "<group>"; };
 		4DB02ECE0D8B9DFE005D492C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -50,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44258B7B162D0E7100594392 /* libmjpegutils.dylib in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4DB02ECF0D8B9DFE005D492C /* OpenGL.framework in Frameworks */,
 				4DB02EE50D8B9E6C005D492C /* QuartzCore.framework in Frameworks */,
@@ -97,20 +91,16 @@
 			children = (
 				44D3FE7C147077D700546721 /* y4m.h */,
 				44D3FE7D147077D700546721 /* y4m.m */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				4DB02E5D0D8B863C005D492C /* yuvVideoView.h */,
+				4DB02E5E0D8B863C005D492C /* yuvVideoView.m */,
+				4422B7680E007F9100266B9A /* yuvGlobals.h */,
+				4422B7690E007F9100266B9A /* yuvGlobals.m */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				4DB02E5D0D8B863C005D492C /* yuvVideoView.h */,
-				4DB02E5E0D8B863C005D492C /* yuvVideoView.m */,
-				4422B7680E007F9100266B9A /* yuvGlobals.h */,
-				4422B7690E007F9100266B9A /* yuvGlobals.m */,
-				44BE34EF0E025B9300FE0896 /* yuv4mpeg.h */,
-				44BE34F00E025BA600FE0896 /* mjpeg_logging.h */,
-				44BE34F10E025BA600FE0896 /* mjpeg_types.h */,
-				44BE34F30E025BB500FE0896 /* mpegconsts.h */,
-				44258B7A162D0E7100594392 /* libmjpegutils.dylib */,
 			);
 			name = yuvCoreVideoplay;
 			sourceTree = "<group>";
@@ -119,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				32CA4F630368D1EE00C91783 /* yuvCoreVideoplay_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -141,6 +130,7 @@
 				4DB02ECE0D8B9DFE005D492C /* OpenGL.framework */,
 				4DB02EE40D8B9E6C005D492C /* QuartzCore.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				4D91E8F416E01BAB0073B2C2 /* SenTestingKit.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -172,6 +162,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "yuvCoreVideoplay" */;
 			compatibilityVersion = "Xcode 3.0";
 			developmentRegion = English;
@@ -181,6 +174,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* yuvCoreVideoplay */;
 			projectDirPath = "";
@@ -240,20 +234,23 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = yuvCoreVideoplay_Prefix.pch;
+				HEADER_SEARCH_PATHS = /usr/local/include/mjpegtools;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/sw/lib,
+					/usr/local/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "-lmjpegutils";
 				PRODUCT_NAME = yuvCoreVideoplay;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -262,17 +259,21 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = yuvCoreVideoplay_Prefix.pch;
+				HEADER_SEARCH_PATHS = /usr/local/include/mjpegtools;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/sw/lib,
+					/usr/local/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "-lmjpegutils";
 				PRODUCT_NAME = yuvCoreVideoplay;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -285,8 +286,8 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_64)";
-				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 			};
 			name = Debug;
@@ -299,8 +300,8 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_64)";
-				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 			};
 			name = Release;

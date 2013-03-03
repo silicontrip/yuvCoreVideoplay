@@ -303,10 +303,13 @@
 	//float currentFPS;
 	
 	cvError = kCVReturnSuccess;
-	read_error_code = Y4M_OK;
+	// read_error_code = Y4M_OK;
 	
 	if (refTime == -1 ) {
-		refTime = syncTimeStamp->videoTime  -  syncTimeStamp->videoTimeScale * [yuvvideo getTime];
+        if (syncTimeStamp)
+            refTime = syncTimeStamp->videoTime  -  syncTimeStamp->videoTimeScale * [yuvvideo getTime];
+        else
+            refTime = 0;
 		// put some playing frame rate statistics here.
 		//	statFrameCount = frameCount;
 		//	statRefTime = syncTimeStamp->videoTime;
@@ -315,13 +318,10 @@
 	//	NSLog(@"getFrameForTime: Time Stamp : %d", frameCounter);
 	
 	yuvTS = [yuvvideo getTime];
-	syncTS = 1.0 * (syncTimeStamp->videoTime - refTime) / syncTimeStamp->videoTimeScale;
-	
-	//	if (((syncTimeStamp->videoTime - statRefTime) / syncTimeStamp->videoTimeScale) > 0) 
-	//		currentFPS = (frameCounter - statFrameCount) /  ((syncTimeStamp->videoTime - statRefTime) / syncTimeStamp->videoTimeScale);
-	
-	// NSLog (@"getFrameForTime: yuv: %g sync: %g",yuvTS,syncTS);
-	// we cannot seek backwards
+    if (syncTimeStamp)
+        syncTS = 1.0 * (syncTimeStamp->videoTime - refTime) / syncTimeStamp->videoTimeScale;
+	else
+        syncTS = 0;
 	
 	if ( ![globalsInstance getIgnoreRate] && yuvTS > syncTS)
 		return NO;
@@ -329,30 +329,20 @@
 	// read frames until we have the one with the correct timestamp.
 	// yuv timestamp is synthesized, there are no timestamp markers in the file.
 	do {
-		//		NSLog (@"getFrameForTime: While yuv: %g < sync: %g",yuvTS,syncTS);
-		
-		//y4m_fini_frame_info( &in_frame );
-		//y4m_init_frame_info( &in_frame );
-		// NSLog (@"getFrameForTime: y4m_read_frame");
 	 	read_error_code = [yuvvideo readFrame];
-		// y4m_read_frame(fdIn, &in_streaminfo,&in_frame,yuv_data );
 		if ([globalsInstance getPassThrough] && read_error_code == Y4M_OK) {
 			// write the frame here
-			//	NSLog (@"writing frame");
-			[yuvvideo writeFrame];
-			//y4m_write_frame( fdOut, &out_streaminfo, &in_frame, yuv_data );
-			
+			[yuvvideo writeFrame];			
 		}
 		
 	//	frameCounter++;
 		yuvTS = [yuvvideo getTime];
-		syncTS = 1.0 * (syncTimeStamp->videoTime - refTime) / syncTimeStamp->videoTimeScale;
+        if (syncTimeStamp)
+            syncTS = 1.0 * (syncTimeStamp->videoTime - refTime) / syncTimeStamp->videoTimeScale;
+        else
+            syncTS = 0;
+
 		
-		/*	
-		 if (yuvTS < syncTS) {
-		 NSLog(@"getFrameForTime: skipping frame");
-		 }
-		 */
 	} while ( yuvTS < syncTS && ![globalsInstance getNoSkip]);
 	
 	// this might slow down the frame renderer
@@ -779,17 +769,22 @@ CVReturn MyDisplayLinkCallback (
 	
 	ciContext = nil;
 	/* Create CGColorSpaceRef */
+    
 	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    /* Create CIContext */
+    /* 10.6 - code */
+    ciContext = [[CIContext contextWithCGLContext:(CGLContextObj)[[self openGLContext] CGLContextObj]
+									  pixelFormat:(CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj]
+                                       colorSpace:colorSpace
+										  options:nil] retain];
 	
-	/* Create CIContext */
-	ciContext = [[CIContext contextWithCGLContext:
-				  (CGLContextObj)[[self openGLContext] CGLContextObj]
-									  pixelFormat:(CGLPixelFormatObj)
-				  [[self pixelFormat] CGLPixelFormatObj]
+        /* 10.4 and 10.5 code
+    ciContext = [[CIContext contextWithCGLContext:(CGLContextObj)[[self openGLContext] CGLContextObj]
+									  pixelFormat:(CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj]
 										  options:[NSDictionary dictionaryWithObjectsAndKeys:
 												   (id)colorSpace,kCIContextOutputColorSpace,
 												   (id)colorSpace,kCIContextWorkingColorSpace,nil]] retain];
-	
+	*/
 	if (ciContext == nil) {
 		NSLog(@"Error creating CIContext!");
 	}

@@ -269,6 +269,11 @@
 					
 					// planar vs packed, it's such a religious argument.
 					// I prefer planar.
+                    
+                    cu = 128;
+                    cv = 128;
+
+                    
 					cy0 = yuv_data[0][x2 + yoff];
 					cy1 = yuv_data[0][x2 + 1 + yoff];
 					
@@ -331,8 +336,8 @@
 			}
 			break;
 		case 'y420':  // this appears to be RGB and not YUV
-			h = CVPixelBufferGetHeight(cf);
-			w = CVPixelBufferGetWidth(cf);
+		//	h = CVPixelBufferGetHeight(cf);
+		//	w = CVPixelBufferGetWidth(cf);
 			
 			for(y=0; y< CVPixelBufferGetHeightOfPlane(cf,0); y++ ) {
 				
