@@ -75,10 +75,16 @@
 }
 
 - (int) getScaledWidth {
+    if (aspect_ratio.d ==0 ||aspect_ratio.n == 0)
+        return width;
+
 	return width * aspect_ratio.n / aspect_ratio.d;
 }
 
 - (int) getScaledHeight {
+    if (aspect_ratio.d ==0 ||aspect_ratio.n == 0)
+        return height;
+    
 	return height * aspect_ratio.d / aspect_ratio.n;
 }
 
