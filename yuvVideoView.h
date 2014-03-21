@@ -81,16 +81,17 @@
 // to make this more OO need to break this into it's objects
 // interface, yuvvideo, corevideo
 
-- (void)play:sender; 
-- (void)pause:sender;
-- (void)frAdvance:sender;
-- (void)frSave:sender;
-- (void)actionNoSkip:sender;
-- (void)actionIgnoreRate:sender;
-- (void)actionSetRate:sender;
-- (void)actionSetAspect:sender;
-- (void)actionSetZoom:sender;
-- (void)resize:sender;
+- (IBAction)play:(id)sender;
+- (IBAction)pause:(id)sender;
+- (IBAction)frAdvance:(id)sender;
+- (IBAction)frSave:(id)sender;
+- (IBAction)actionNoSkip:(id)sender;
+- (IBAction)actionIgnoreRate:(id)sender;
+- (IBAction)actionSetRate:(id)sender;
+- (IBAction)actionSetAspect:(id)sender;
+- (IBAction)actionSetZoom:(id)sender;
+- (IBAction)resize:(id)sender;
+
 - (void)reshape;
 - (void)setRate:(NSString *)rateString;
 - (void)setAspect:(NSString *)aspectString; 
