@@ -36,7 +36,7 @@
 
 
 #import "yuvVideoView.h"
-
+#import <OpenGL/gl.h>
 
 @implementation yuvVideoView
 
