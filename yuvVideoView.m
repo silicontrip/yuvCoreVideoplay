@@ -43,7 +43,7 @@
 // sets up the memory pointer globals
 
 #pragma mark #### Responders ####
-- (void)play:sender 
+- (IBAction)play:(id)sender
 {
 	if (!CVDisplayLinkIsRunning(displayLink)) {
 		//	NSLog(@"play");
@@ -53,7 +53,7 @@
 	}
 }
 
-- (void)pause:sender
+- (IBAction)pause:(id)sender
 {
 	if (CVDisplayLinkIsRunning(displayLink)) {
 		//	NSLog(@"pause");
@@ -63,7 +63,7 @@
 	
 }
 
-- (void)frAdvance:sender
+- (IBAction)frAdvance:(id)sender
 {
 	if (!CVDisplayLinkIsRunning(displayLink)) {
 		//	NSLog(@"advance");
@@ -74,7 +74,7 @@
 	
 }
 
-- (void)frSave:sender
+- (IBAction)frSave:(id)sender
 {
 	
 	CIImage     *inputImage;
@@ -112,24 +112,24 @@
 }
 
 
-- (void)actionNoSkip:sender
+- (IBAction)actionNoSkip:(id)sender
 {
 	[NoSkip setState:![NoSkip state]];
 	[globalsInstance setNoSkip:![NoSkip state]];
 }
 
-- (void)actionIgnoreRate:sender
+- (IBAction)actionIgnoreRate:(id)sender
 {
 	[IgnoreRate setState:![IgnoreRate state]];
 	[globalsInstance setIgnoreRate:![IgnoreRate state]];	
 }
 
-- (void)actionSetRate:sender
+- (IBAction)actionSetRate:(id)sender
 {	
 	[self setRate:[Ratetext stringValue]];
 }
 
-- (void)actionSetAspect:sender
+- (IBAction)actionSetAspect:(id)sender
 {	
 	
 	[self setAspect:[Aspecttext stringValue]];
@@ -138,7 +138,7 @@
 	
 }
 
-- (void)actionSetZoom:sender
+- (IBAction)actionSetZoom:(id)sender
 {	
 	needsReshape=YES;
 	//	NSLog (@"actionSetZoom: %f" , [Zoomtext floatValue]);
@@ -148,7 +148,7 @@
 }
 
 
-- (void)resize:sender
+- (IBAction)resize:(id)sender
 {
 	[self reshape];
 }
