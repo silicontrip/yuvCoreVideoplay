@@ -190,7 +190,7 @@
 		
 		refTime = -1;
 		
-		[yuvvideo setFrameRate:framen:framed];
+		[yuvvideo setFrameRateNum:framen den:framed];
 	}
 }
 
@@ -223,7 +223,7 @@
 	} else {
 		//	NSLog(@"setting frame rate");
 		
-		[yuvvideo setSampleAspect:aspectn:aspectd];
+		[yuvvideo setSampleAspectNum:aspectn den:aspectd];
 	}
 }
 
@@ -722,7 +722,7 @@ CVReturn MyDisplayLinkCallback (
 	
 	yuvvideo = [y4m alloc];
 	
-	if ( [yuvvideo initWith:0:1:1] != Y4M_OK) {
+	if ( [yuvvideo initWithFdin:0 fdout:1 extensions:1] != Y4M_OK) {
 		NSLog(@"Could'nt create yuvvideo" );
 		exit(-1);
 	} 
