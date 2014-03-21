@@ -11,7 +11,7 @@
 
 @implementation y4m
 
-- (bool)initWith:(int)fin:(int)fout:(int)extensions 
+- (bool)initWithFdin:(int)fin fdout:(int)fout extensions:(int)extensions
 {
 	
 	int read_error_code = Y4M_OK;
@@ -106,7 +106,7 @@
 	return [NSString stringWithFormat:@"%d:%d",frame_rate.n , frame_rate.d];
 }
 
--(void) setFrameRate:(int)n:(int)d {
+-(void) setFrameRateNum:(int)n den:(int)d {
 	frame_rate.n = n;
 	frame_rate.d = d;
 }
@@ -139,7 +139,7 @@
 }
 
 
--(void) setSampleAspect:(int)n:(int)d {
+-(void) setSampleAspectNum:(int)n den:(int)d {
 	aspect_ratio.n = n;
 	aspect_ratio.d = d;
 }

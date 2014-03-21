@@ -40,7 +40,7 @@
 	int height;
 }
 
-- (bool)initWith:(int)fin:(int)fout:(int)extensions;
+- (bool)initWithFdin:(int)fin fdout:(int)fout extensions:(int)extensions;
 - (bool)initOut;
 - (int) getScaledWidth;
 - (int) getScaledHeight;
@@ -50,7 +50,7 @@
 - (int) getFrameRateD;
 - (y4m_ratio_t) getFrameRate;
 - (NSString *) getFrameRateAsString;
-- (void) setFrameRate:(int)n:(int)d;
+- (void) setFrameRateNum:(int)n den:(int)d;
 - (int) getDisplayAspectN;
 - (int) getDisplayAspectD;
 - (y4m_ratio_t) getSampleAspect;
@@ -58,7 +58,7 @@
 - (int) getSampleAspectN;
 - (int) getSampleAspectD;
 - (bool) getSampleAspectWide;
-- (void) setSampleAspect:(int)n:(int)d;
+- (void) setSampleAspectNum:(int)n den:(int)d;
 - (y4m_ratio_t) getChromaSubsample;
 - (int) getFrameCounter;
 - (double) getTime;
